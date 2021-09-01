@@ -56,13 +56,13 @@ unless ENV['IN_DOCKER'] == 'true'
     end
   end
 
-  test_protos.each do |proto_file|
-    output_file = proto_file.sub(/\.proto$/, "_pb.rb")
-    genproto_output << output_file
-    file output_file => proto_file do |file_task|
-      sh "#{protoc_command} -I../src -I. --ruby_out=. #{proto_file}"
-    end
-  end
+  #test_protos.each do |proto_file|
+  #  output_file = proto_file.sub(/\.proto$/, "_pb.rb")
+  #  genproto_output << output_file
+  #  file output_file => proto_file do |file_task|
+  #    sh "#{protoc_command} -I../src -I. --ruby_out=. #{proto_file}"
+  #  end
+  #end
 end
 
 if RUBY_PLATFORM == "java"
